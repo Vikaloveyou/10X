@@ -1,0 +1,282 @@
+.portfolio {
+    padding: 0 56px 0 56px;
+    margin-top: 213px;
+
+        
+    @media (max-width: 1000px) {
+        margin-top: 180px;
+    }
+
+    @media (max-width: 700px) {
+        margin-top: 100px;
+    }
+
+    @media (max-width: 450px) {
+        margin-top: 50px;
+    }
+
+
+    &-bg {
+        background-image: url(../img/portfolio/portfolio-bg.png);
+        @include image-style();
+        @include flex(center, center);
+        flex-direction: column;    
+    }
+
+    &__title {
+        margin-top: 173px;
+        font-family: 'PlayfairDisplay-Bold';
+        font-size: 18px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        letter-spacing: 10.8px;
+        color: $white;
+        text-transform: uppercase;
+        margin-right: -10.8px;
+        position: relative;
+
+        @media (max-width: 1000px) {
+            margin-top: 100px;
+        }
+
+        @media (max-width: 550px) {
+            font-size: 14px;
+            letter-spacing: 8px;
+            margin-top: 70px;
+        }
+
+        @media (max-width: 450px) {
+            font-size: 12px;
+            letter-spacing: 6px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 340px) {
+            font-size: 11px;
+            letter-spacing: 5px;
+        }
+
+        &::before {
+            content: '';
+            width: 2px;
+            height: 129px;
+            background-image: linear-gradient(to top, $orange3, $orange2);
+            position: absolute;
+            right: calc(50% + 5.4px);
+            transform: translateX(50%);
+            top: 35px;
+            z-index: 500;
+
+            @media (max-width: 550px) {
+                height: 100px;
+            }
+
+            @media (max-width: 450px) {
+                height: 70px;
+            }
+        }
+    }
+
+    &__shop-container {
+        @include flex(space-evenly, center);
+        flex-wrap: wrap;
+    }
+       
+    &__shop-item-wrapper {
+        position: relative;
+        margin: 118px 20px 46px 20px;
+        
+        &:hover .portfolio__outline {
+            opacity: 100%;
+        }
+
+        &:hover .portfolio__item-triangle {
+            opacity: 100%;
+        }
+
+        &:hover .portfolio__item-button {
+            opacity: 0;
+           
+        }
+
+        
+        @media (max-width: 550px) {
+            margin: 80px 20px 36px 20px;
+        }
+
+        @media (max-width: 450px) {
+            margin: 60px 20px 26px 20px;
+        }
+        
+    }
+    
+    &__outline {
+        margin-top: 98px;
+        position: absolute;
+        width: 520px;
+        height: 660px;
+        background-image: linear-gradient(to top, $violet1, $pink);
+        opacity: 0;
+        z-index: 1;
+        top: -115px;
+        left: -20px;
+        transition: .3s;
+
+        @media (max-width: 550px) {
+            width: calc(520px * 75 / 100);
+            height: calc(660px * 75 / 100);
+            left: -15px;
+        }
+
+        @media (max-width: 450px) {
+            width: calc(520px * 55 / 100);
+            height: calc(660px * 55 / 100);
+            left: -12px;
+            top: -110px;
+        }       
+    }
+   
+    &__shop-item {
+        width: 480px;
+        height: 620px;
+        padding-bottom: 70px;
+        background-color: $white;
+        @include image-style();
+        @include flex(flex-end, center);
+        flex-direction: column;
+        position: relative; 
+        z-index: 300;   
+        
+        @media (max-width: 550px) {
+            width: calc(480px * 75 / 100);
+            height: calc(620px * 75 / 100);
+            padding-bottom: 50px;
+        }
+
+        @media (max-width: 450px) {
+            width: calc(480px * 55 / 100);
+            height: calc(620px * 55 / 100);
+            padding-bottom: 35px;
+        }
+            
+        &--end-of-thino {
+            background-image: url(../img/portfolio/end-of-thino.png);  
+        }
+
+        &--het-boerenveensche {
+            background-image: url(../img/portfolio/het-boerenveensche.png);
+        }
+
+        &--bluerocket {
+            background-image: url(../img/portfolio/bluerocket.png);
+        }
+
+        &--harmony-poliform {
+            background-image: url(../img/portfolio/harmony-poliform.png);
+        }
+
+        &--rowenta-studiodry{
+            background-image: url(../img/portfolio/rowenta-studiodry.png);
+        }
+
+        &--fritsch-durisotti {
+            background-image: url(../img/portfolio/fritsch-durisotti.png);
+        }
+    }
+
+    &__item-triangle {
+        border-radius: 2px;
+        background-image: linear-gradient(to top, $orange3, $orange2);
+        width: 180px;
+        height: 180px;
+        position: absolute;
+        transform: rotate(-45deg);
+        right: -90px;
+        bottom: -90px;
+        opacity: 0;
+        transition: 0.3s;
+             
+        &-wrapper {
+            width: 130px;
+            height: 130px;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+        }
+
+        &-arrow {
+            background-image: url(../img/portfolio/arrow-right.png);
+            @include image-style();
+            width: 35px;
+            height: 9px;
+            transform: rotate(45deg) translateX(77px) translateY(-25px);
+        }
+    }
+
+    &__item-title {
+        font-family: 'ProximaNova-Semibold';
+        font-size: 30px;
+        font-weight: 600;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.07;
+        letter-spacing: normal;
+        text-align: left;
+        color: $black;
+
+        @media (max-width: 550px) {
+            font-size: 20px;
+        }
+
+        @media (max-width: 450px) {
+            font-size: 15px;
+        }
+    }
+
+    &__item-text {
+        font-family: 'ProximaNova-Regular';
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        text-align: center;
+        color: $black;
+        margin-top: 23px;
+
+        @media (max-width: 550px) {
+            font-size: 12px;
+            margin-top: 15px;
+        }
+
+        @media (max-width: 450px) {
+            font-size: 10px;
+            margin-top: 10px;
+        }
+    }
+
+    &__item-button {
+        font-family: 'ProximaNova-Extrabld';
+        font-size: 14px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        letter-spacing: 2.8px;
+        text-transform: uppercase;
+        color: $white;
+        width: 200px;
+        height: 54px;
+        border-radius: 2px;
+        background-image: linear-gradient(to right, $orange2, $orange3);
+        border: transparent;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        transition: .3s;
+        opacity: 100%;
+    }
+}

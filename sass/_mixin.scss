@@ -1,0 +1,10 @@
+@mixin flex($jc:space-between, $ai:center) {
+    display: flex;
+    justify-content: $jc;
+    align-items: $ai;
+}
+
+@mixin image-style($repeat:no-repeat, $size:contain) {
+    background-repeat: $repeat; 
+    background-size: $size;
+}

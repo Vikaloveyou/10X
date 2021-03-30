@@ -1,0 +1,145 @@
+.header {
+    height: 30px;
+    @include flex();
+    padding: 60px 60px 0 60px;
+    margin-bottom: 235px;
+
+    @media (max-width: 1200px) {
+        @include flex();
+        height: 220px;
+        flex-direction: column; 
+        margin-bottom: 0;     
+    }
+
+    @media (max-width: 550px) {
+        height: 450px;
+    }
+
+    @media (max-width: 400px) {
+     padding-top: 30px;
+    }
+
+    &__block-logo_and_phone {
+        @include flex();
+        width: 405px;
+
+        @media (max-width: 550px) {
+            width: 300px;
+            height: 150px;
+            flex-wrap: wrap;
+        }
+    }
+
+    &__logo {
+        height: 29px;
+        width: 119;
+
+        @media (max-width: 550px) {
+            margin: 0 auto;
+        }
+    }
+
+    &__phone {
+        @include flex();
+        width: 200px;
+        @media (max-width: 550px) {
+            margin: 0 auto;
+        }
+       
+    }
+
+    &__phone-text {
+        font-family: 'PlayfairDisplay-Regular';
+        font-variant-numeric: lining-nums;
+        color: $grey2;
+        font-size: 16px;
+        letter-spacing: 3.2px;
+    }
+
+  
+    &__block-menu_and_socials {
+        display: flex;
+        justify-content: space-between;
+        width: 620px;
+        align-self: center;
+        position: relative;
+
+        @media (max-width: 1200px) {
+            height: 90px;
+            @include flex();
+            flex-direction: column;
+            position: static;
+        }
+
+        @media (max-width: 550px) {
+            height: 300px;
+        }
+    }
+
+    &__menu-list{
+        @include flex();
+        align-self: center;
+        width: 505px;
+
+        @media (max-width: 550px) {
+            width: 400px;  
+        }
+
+        @media (max-width: 550px) {
+            width: 100px;
+            height: 200px;
+            flex-wrap: wrap;
+            @include flex(center, center);
+        }
+        
+    }
+ 
+    &__menu-link {
+        font-family: 'Lato-Bold';
+        font-size: 15px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: $grey1;
+
+        @media (max-width: 400px) {
+            margin: 0 auto;
+        }
+    }
+
+    &__socials {
+        @include flex();
+        flex-direction: column;
+        height: 180px;
+        position: absolute;
+        right: 0;
+
+        @media (max-width: 1200px) {
+            position: static;
+            flex-direction: row;
+            width: 180px;
+            height: 20px;
+            justify-content: space-between;
+        }
+    }
+
+    &__socials-item--colorful {
+        position: relative;
+    }
+
+    &__instagram-brd {
+        background-image: url(../img/header/header-instagram-brd.png); 
+        @include image-style();
+        position: absolute;
+        width: 25px; 
+        height: 47px;
+        top: -15px;
+        left: 10px;
+    }
+}
+
+
+
+
+
+
+
